@@ -1,5 +1,7 @@
 //const { chromium } = require("playwright");
-const playwright = require("playwright-aws-lambda");
+//const playwright = require("playwright-aws-lambda");
+const awsChromium = require("chrome-aws-lambda");
+const playwright = require("playwright-core");
 
 const headers = {
   "Access-Control-Allow-Credentials": true,
@@ -10,19 +12,32 @@ const headers = {
 const numberOfArticles = process.env.NUMBER_OF_ARTICLES;
 
 exports.handler = async (event, context, callback) => {
-  const articles = await getHackerNewsArticles();
-  callback(null, {
-    statusCode: 200,
-    headers,
-    body: JSON.stringify({ msg: "Content Retrieval Successful", content: articles }),
-  });
+  try {
+    const articles = await getHackerNewsArticles();
+    callback(null, {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ msg: "Content Retrieval Successful", content: articles }),
+    });
+  } catch (error) {
+    console.log("Request Error: ", error);
+    callback(null, {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ msg: "Content Request Failed", error: errors }),
+    });
+  }
 };
 
 async function getHackerNewsArticles() {
   // launch browser
 
   //const browser = await chromium.launch({ headless: true });
-  const browser = await playwright.launchChromium();
+  //const browser = await playwright.launchChromium();
+  const browser = await awsChromium.launch({
+    headless: false,
+    executablePath: awsChromium.executablePath,
+  });
   const context = await browser.newContext();
   const page = await context.newPage();
 
