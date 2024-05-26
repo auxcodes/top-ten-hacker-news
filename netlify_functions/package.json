@@ -6,7 +6,8 @@
   "scripts": {},
   "author": "",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "playwright": "^1.39.0"
+    "playwright": "^1.39.0",
+    "playwright-aws-lambda": "^0.10.0",
+    "playwright-core": "^1.44.1"
   }
 }
