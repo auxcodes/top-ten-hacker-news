@@ -16,12 +16,47 @@
 
 <body>
     <header id="pageHeader">
-        <h1 class="title">Hacker News Top Ten!!</h1>
+        <div class="title-platform">
+            <h1 class="title">Hacker News Top Ten!!</h1>
+        </div>
     </header>
     <main class="content">
         <div class="page-content">
             <section id="articlesSection" class="articles-section">
+                <div id="loadingContent">
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the blank space before we have articles...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the blank...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the blank space before we have articles...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the blank space before we have...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill in the blank space be articles...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to fill  have articles...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading article title to...</a>
+                    </article-row>
+                    <article-row class="article-row blur">
+                        <a class="loading-article" target="_blank">This is a loading fill in the blank space before we have articles...</a>
+                    </article-row>
+                </div>
             </section>
+            <a id="downloadButton" class="download-btn" download="toptenCSV.csv">Download CSV</a>
         </div>
     </main>
     <script type="module" src="src/app/index.js"></script>
@@ -37,7 +72,6 @@
                     </path>
                 </svg>
             </a>
-            <button id="footerContactBtn" class="footer-contact-btn" title="Contact Us"><i class="fa fa-envelope site-nav--icon"></i></button>
         </div>
         <div class="footer-acknowledgement">
             <span>You scrolled this far?!</span>

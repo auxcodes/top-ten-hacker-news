@@ -42,23 +42,25 @@ export function sendContentRequest(requestData) {
 
 function generateContent(articles) {
   const contentElement = document.getElementById("articlesSection");
+  removeLoadingArticles();
   articles.forEach((article) => {
     const el = document.createElement("article-row");
     el.classList.add("article-row");
     el.article = article;
     contentElement.append(el);
   });
-  generateDownloadButton(contentElement);
+  addHrefToDownloadButton(contentElement);
 }
 
-function generateDownloadButton(parentElement) {
-  const button = document.createElement("a");
-  button.classList.add("download-btn");
-  button.innerText = "Download CSV";
-  button.download = "toptenCSV.csv";
+function removeLoadingArticles() {
+  const loadingContent = document.getElementById("loadingContent");
+  loadingContent.classList.add("hide-loading");
+}
+
+function addHrefToDownloadButton(parentElement) {
+  const button = document.getElementById("downloadButton");
   // create CSV and Blobify
   const articlesCSV = convertArticlesToCSV(articles);
+  // add blob url to href
   button.href = saveCsvUrl(articlesCSV);
-  // add to DOM
-  parentElement.append(button);
 }

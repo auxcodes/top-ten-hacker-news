@@ -1,5 +1,3 @@
-//const { chromium } = require("playwright");
-//const playwright = require("playwright-aws-lambda");
 const { chromium: playwright } = require("playwright-core");
 const chromium = require("@sparticuz/chromium");
 
@@ -31,10 +29,6 @@ exports.handler = async (event, context, callback) => {
 
 async function getHackerNewsArticles() {
   // launch browser
-
-  //const browser = await chromium.launch({ headless: true });
-  //const browser = await playwright.launchChromium();
-
   const browser = await playwright.launch({
     args: chromium.args,
     executablePath: await chromium.executablePath(),
