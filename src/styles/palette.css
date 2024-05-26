@@ -1,0 +1,12 @@
+/* Palette */
+:root {
+  --background: rgb(247, 247, 247);
+  --background-notif: rgb(223, 237, 242);
+  --colour-text: #4b4949;
+  --border-menu: #7c7c7c;
+  --bg-color-menu: #3d3d3d;
+  --landing-box-shadow: 0px 12px 16px 0 rgba(0, 0, 0, 0.1), 0px -12px 16px 0 #fff;
+  --icon-box-shadow: 0px 12px 16px 0 rgba(0, 0, 0, 0.1), 0px -12px 16px 0 #ffffff88;
+  --btn-box-shadow: 0px 5px 7px #000;
+  --btn-off-box-shadow: 0px 5px 7px #000, inset 0px 0px 6px #00000086;
+}

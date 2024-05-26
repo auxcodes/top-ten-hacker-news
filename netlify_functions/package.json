@@ -1,0 +1,11 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "articles.js",
+  "scripts": {},
+  "author": "",
+  "dependencies": {
+    "playwright": "^1.39.0"
+  }
+}

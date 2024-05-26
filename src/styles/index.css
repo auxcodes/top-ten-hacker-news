@@ -1,0 +1,289 @@
+@import url("palette.css");
+
+/* 
+    Body
+    Footer
+    Forms, Modals, Buttons
+    html (load last to stop FOUC)
+*/
+
+/*
+ :root and palette variables imported from palette.css
+*/
+
+body {
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--background);
+}
+
+header {
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  top: 0;
+}
+
+.title {
+  margin: 2em auto;
+}
+
+h1,
+h2,
+label {
+  font-weight: bold;
+  color: var(--colour-text);
+}
+
+label {
+  margin: 0.25em;
+  font-size: 1.75rem;
+}
+
+input,
+button {
+  border: none;
+  margin: 0.25em;
+  font-size: 1.25rem;
+}
+
+/* Body */
+.content {
+  display: flex;
+  flex: 1 0 auto;
+  background: linear-gradient(var(--active-search-color), var(--active-search-color) 5em, #fff 66vh);
+}
+
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.results-visible {
+  display: none !important;
+}
+
+/* Footer */
+.footer-content {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  bottom: 0;
+  flex-direction: row;
+  border-top: 1px solid #e1e1e1;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #6c6c6c;
+}
+.footer-content .copyright {
+  margin: auto 0;
+  display: flex;
+  cursor: pointer;
+  text-decoration: none;
+  color: #6c6c6c;
+}
+.footer-content .copyright .logo {
+  display: block;
+  background-image: url("../assets/aux-logo-centered.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0 0 0 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer-content .contact {
+  margin-right: auto;
+  display: flex;
+  cursor: pointer;
+  border-bottom: 2px solid #e1e1e1;
+  border-radius: 0 0 20px 20px;
+  width: 100px;
+  padding: 0 0 5px 5px;
+}
+
+.footer-links {
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer-content .github-link {
+  display: flex;
+}
+.footer-content .github-link .octicon {
+  height: 35px;
+  width: 35px;
+  margin: auto 10px auto auto;
+  fill: #6c6c6c;
+}
+.footer-content .footer-contact-btn {
+  margin: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: #6c6c6c;
+}
+
+.footer-contact-btn i {
+  color: inherit;
+  margin: 0;
+}
+
+.footer-acknowledgement {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #d2d2d2;
+}
+
+/* Set a style for all buttons */
+.btn-row {
+  display: flex;
+  border-bottom: 1px var(--border-menu) solid;
+  position: relative;
+}
+
+.modal-btn {
+  width: 100%;
+  background-color: #045aaa;
+  color: white;
+  padding: 0.45em 1em;
+  margin: 0.45em auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.85em;
+  width: fit-content;
+  transition: box-shadow 200ms;
+}
+
+.modal-btn:hover {
+  box-shadow: var(--btn-box-shadow);
+}
+
+.link-button {
+  background-color: transparent;
+  font-size: 1.1rem;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Add a hover effect for buttons */
+.login-btn:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  margin: 0 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .shop-id {
+  display: none;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 1em;
+  opacity: 0;
+  clip-path: circle(0px at center);
+  transition: clip-path ease-in-out 500ms, opacity ease-in-out 450ms;
+}
+
+.modal-open {
+  opacity: 1;
+  clip-path: circle(250% at center);
+  z-index: 10;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: var(--colour-text);
+  font-size: 1.5rem;
+  padding: 0.45em;
+  margin: 0 auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto 2em auto;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 1em;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.45);
+}
+
+.modal-textarea {
+  resize: vertical;
+}
+
+.change-notes {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-top: 1em;
+  padding: 0;
+  border-top: 1px solid var(--border-menu);
+}
+
+.change-notes label {
+  padding-bottom: 0;
+  margin-left: 0.25em;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.contact-progress-bar {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-bottom: 1px solid #666;
+  margin: 0.25em 0 0.25em 0;
+}
+
+.contact-progress-bar .contact-progress {
+  display: block;
+  height: 100%;
+  background-color: #2696ff;
+  width: 0%;
+}
+
+html {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+/*# sourceMappingURL=styles.css.map */

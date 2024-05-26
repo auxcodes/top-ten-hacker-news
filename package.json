@@ -1,0 +1,21 @@
+{
+  "name": "top-ten-hacker-news",
+  "version": "1.0.0",
+  "description": "Top Ten Articles on Hacker News",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {},
+  "debug": "netlify dev --inspect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auxcodes/top-ten-hacker-news.git"
+  },
+  "author": "auxcodes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auxcodes/top-ten-hacker-news/issues"
+  },
+  "homepage": "https://github.com/auxcodes/top-ten-hacker-news#readme"
+}

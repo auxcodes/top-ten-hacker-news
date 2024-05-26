@@ -1,0 +1,13 @@
+.vs/store-brand-reference/v16/.suo
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vscode/launch.json
+node_modules
+# Local Netlify folder
+netlify_functions/package-lock.json
+netlify_functions/node_modules
+netlify_functions/.env
+.netlify
+.env
+
+package-lock.json
