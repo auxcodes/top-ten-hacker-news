@@ -1,7 +1,7 @@
 //const { chromium } = require("playwright");
 //const playwright = require("playwright-aws-lambda");
-const awsChromium = require("chrome-aws-lambda");
-const playwright = require("playwright-core");
+const { chromium: playwright } = require("playwright-core");
+const chromium = require("@sparticuz/chromium");
 
 const headers = {
   "Access-Control-Allow-Credentials": true,
@@ -34,13 +34,13 @@ async function getHackerNewsArticles() {
 
   //const browser = await chromium.launch({ headless: true });
   //const browser = await playwright.launchChromium();
-  const path = await awsChromium.executablePath;
-  console.log("Executable path: ", path);
-  const browser = await playwright.chromium.launch({
-    args: awsChromium.args,
-    executablePath: path,
-    headless: awsChromium.headless,
+
+  const browser = await playwright.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
+    headless: true,
   });
+
   const context = await browser.newContext();
   const page = await context.newPage();
 
