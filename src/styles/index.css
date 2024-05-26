@@ -137,13 +137,34 @@ label {
 
 .blur {
   filter: blur(5px);
-  animation: grow-blur 1s ease-in-out infinite;
+  animation: grow-blur 1.33s ease-in-out infinite;
 }
 
 .loading-article {
   color: var(--colour-text);
   text-decoration: none;
   padding: 0.5em;
+}
+
+@keyframes grow-blur {
+  0% {
+    filter: blur(3px);
+  }
+  20% {
+    filter: blur(4px);
+  }
+  40% {
+    filter: blur(5px);
+  }
+  60% {
+    filter: blur(4px);
+  }
+  80% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(2px);
+  }
 }
 
 /* Footer */
