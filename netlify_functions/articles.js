@@ -34,9 +34,11 @@ async function getHackerNewsArticles() {
 
   //const browser = await chromium.launch({ headless: true });
   //const browser = await playwright.launchChromium();
+  const path = await awsChromium.executablePath;
+  console.log("Executable path: ", path);
   const browser = await playwright.chromium.launch({
     args: awsChromium.args,
-    executablePath: awsChromium.executablePath,
+    executablePath: path,
     headless: awsChromium.headless,
   });
   const context = await browser.newContext();
