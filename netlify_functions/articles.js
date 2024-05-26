@@ -1,4 +1,6 @@
-const { chromium } = require("playwright");
+//const { chromium } = require("playwright");
+const chromium = require("chrome-aws-lambda");
+const playwright = require("playwright-core");
 
 const headers = {
   "Access-Control-Allow-Credentials": true,
@@ -19,7 +21,13 @@ exports.handler = async (event, context, callback) => {
 
 async function getHackerNewsArticles() {
   // launch browser
-  const browser = await chromium.launch({ headless: true });
+
+  //const browser = await chromium.launch({ headless: true });
+  const browser = await playwright.chromium.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath,
+    headless: chromium.headless,
+  });
   const context = await browser.newContext();
   const page = await context.newPage();
 
