@@ -8,7 +8,6 @@ Website that displays the top ten news articles from Hacker News
 ## Server Side
 - chande directories `cd netlify_functions`
 - run `npm install`
-- run `npx playwright install`
 
 # How to Run
 To run locally:
