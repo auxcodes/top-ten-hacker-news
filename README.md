@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H1ZZY1Q)
 # Top Ten Hacker News
 Website that displays the top ten news articles from Hacker News
 
